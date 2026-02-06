@@ -29,6 +29,18 @@ Here, we show examples of using the EfficeintPS, DeepLab, and Oneformer for the 
 - Requirement for Oneformer is from [here](https://github.com/SHI-Labs/OneFormer).
 - Download the Cityscape validation [here](https://mega.nz/folder/tS8QSaxL#5yhdfe9ogpKk18dRwX7WCw](https://www.cityscapes-dataset.com/downloads/)https://www.cityscapes-dataset.com/downloads/).
 
+## Degrading Tools
+#### Step 1- Noises Generation
+run codes with the following cmd (noises aligned with .py names):
+
+```
+cd ./Dataset/Degrading
+python Compression.py
+python Motion_blur.py
+python Raindrop/Raindrops.py
+python ...
+```
+
 ## More coming soon upon!
 
 #### To-do List
