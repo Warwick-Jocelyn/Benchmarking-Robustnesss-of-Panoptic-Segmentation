@@ -6,13 +6,13 @@ Robustness-of-Panoptic-Segmentation-for-Degraded-Automotive-Cameras-Data, [link]
 While panoptic quality might be affected by automotive camera data quality, a comprehensive understanding and modelling of their relationship remains underexplored. Motivated by such a need, this work proposes a unifying pipeline to evaluate the robustness of panoptic segmentation models for automotive cameras, correlating it with 8 traditional image quality metrics (IQA).
 
 <img src="docs/D-Cityscapes+.png" alt="Illustration of D-Cityscapes+" width="400"/>
- - **New robustness dataset**: Degraded-Cityscapes+ (D-Cityscapes+) (Novel model for snow and unfavourable light)
-
+ 
 <img src="docs/pipeline.png" alt="Illustrating of the unifying degradation data generation pipeline." width="700"/>
- - **Unifying degradation pipeline**: unifying pipeline to assess the robustness of panoptic segmentation models for assisted and automated driving (AAD) systems, correlating it with image quality.
 
-<img src="docs/PQ_FPS_results.png" alt="Benchmarking Results." width="400"/>
+<img src="docs/PQ_FPS_results.png" alt="Benchmarking Results." width="400"/> 
 
+- **New robustness dataset**: Degraded-Cityscapes+ (D-Cityscapes+) (Novel model for snow and unfavourable light).
+- **Unifying degradation pipeline**: unifying pipeline to assess the robustness of panoptic segmentation models for assisted and automated driving (AAD) systems, correlating it with image quality.
 - **Benchmarking experiments**: 14 state-of-the-art CNN- and transformer-based panoptic segmentation networks are used to compare their robustness.
 
 **Summary**: The presented insights provide practitioners with a valuable benchmark, predictive metrics, and clear guidelines for developing robust, real-time-capable segmentation models suitable for challenging automotive environments.
@@ -31,7 +31,7 @@ While panoptic quality might be affected by automotive camera data quality, a co
 Here, we show examples of using the EfficeintPS, DeepLab, and Oneformer for the Cityscape dataset. 
 - Requirement for EfficientPS is from [here](https://github.com/DeepSceneSeg/EfficientPS#system-requirements).
 - Requirement for DeepLab is from [here](https://github.com/bowenc0221/panoptic-deeplab/blob/master/tools_d2/README.md).
-- Requirement for Oneformer is from [here](https://github.com/SHI-Labs/OneFormer).
+- Requirement for OneFormer is from [here](https://github.com/SHI-Labs/OneFormer).
 - Download the Cityscape validation [here](https://mega.nz/folder/tS8QSaxL#5yhdfe9ogpKk18dRwX7WCw](https://www.cityscapes-dataset.com/downloads/)https://www.cityscapes-dataset.com/downloads/).
 
 ## Degrading Tools
