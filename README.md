@@ -6,14 +6,13 @@ Robustness-of-Panoptic-Segmentation-for-Degraded-Automotive-Cameras-Data, [link]
 While panoptic quality might be affected by automotive camera data quality, a comprehensive understanding and modelling of their relationship remains underexplored. Motivated by such a need, this work proposes a unifying pipeline to evaluate the robustness of panoptic segmentation models for automotive cameras, correlating it with 8 traditional image quality metrics (IQA).
 
 <img src="docs/D-Cityscapes+.png" alt="Illustration of D-Cityscapes+" width="400"/>
-<img src="docs/pipeline.png" alt="Illustrating of the unifying degradation data generation pipeline." width="700"/>
-<img src="docs/PQ_FPS_results.png" alt="Benchmarking Results." width="400"/>
-
 - **New robustness dataset**: **Degraded-Cityscapes+ (D-Cityscapes+)** (Novel model for snow and unfavourable light)
+<img src="docs/pipeline.png" alt="Illustrating of the unifying degradation data generation pipeline." width="700"/>
 - **Unifying degradation pipeline**: unifying pipeline to assess the robustness of panoptic segmentation models for assisted and automated driving (AAD) systems, correlating it with image quality.
+<img src="docs/PQ_FPS_results.png" alt="Benchmarking Results." width="400"/>
 - **Benchmarking experiments**: 14 state-of-the-art CNN- and transformer-based panoptic segmentation networks are used to compare their robustness.
-- **A unifying robustness evaluation pipeline**: for automotive cameras, correlating it with 8 traditional image quality metrics (IQA).
-- **Summary**: The presented insights provide practitioners with a valuable benchmark, predictive metrics, and clear guidelines for developing robust, real-time-capable segmentation models suitable for challenging automotive environments.
+
+**Summary**: The presented insights provide practitioners with a valuable benchmark, predictive metrics, and clear guidelines for developing robust, real-time-capable segmentation models suitable for challenging automotive environments.
 
 ## Timeline 
 - First submission (14-Jan-2025) 
@@ -25,7 +24,6 @@ While panoptic quality might be affected by automotive camera data quality, a co
 - ⌛️ Total: ～8 months
 - 🎹 Accepted to be presented in ICRA 2026, see you in 🇦🇹！(1st-Feb-2026)
 
-This is the **PyTorch re-implementation** of our T-ASE paper: 
 ## Requirements
 Here, we show examples of using the EfficeintPS, DeepLab, and Oneformer for the Cityscape dataset. 
 - Requirement for EfficientPS is from [here](https://github.com/DeepSceneSeg/EfficientPS#system-requirements).
@@ -48,11 +46,9 @@ python ...
 ## More coming soon upon!
 
 #### To-do List
-- Publish the final version of the accepted paper
 - Share the D-Cityscapes+ dataset with 19 noise factors
 - Share the noise generation table and tools
 - Share the re-trained model on the new noisy data under adverse weather conditions
-
 
 ## Citation
 If you find this code helpful in your research or wish to refer to the baseline results, please use the following BibTeX entry.
