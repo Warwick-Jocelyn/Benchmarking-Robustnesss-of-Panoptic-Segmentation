@@ -58,9 +58,13 @@ python ...
 If you find this code helpful in your research or wish to refer to the baseline results, please use the following BibTeX entry.
 
 ```BibTeX
-@article{wang2024benchmarking,
-  title={Benchmarking the Robustness of Panoptic Segmentation for Automated Driving},
+@ARTICLE{11148081,
   author={Wang, Yiting and Zhao, Haonan and Gummadi, Daniel and Dianati, Mehrdad and Debattista, Kurt and Donzella, Valentina},
-  journal={arXiv preprint arXiv:2402.15469},
-  year={2024}
-}
+  journal={IEEE Transactions on Automation Science and Engineering}, 
+  title={Robustness of Panoptic Segmentation for Degraded Automotive Cameras Data}, 
+  year={2025},
+  volume={22},
+  number={},
+  pages={21020-21032},
+  doi={10.1109/TASE.2025.3605753}}
+
