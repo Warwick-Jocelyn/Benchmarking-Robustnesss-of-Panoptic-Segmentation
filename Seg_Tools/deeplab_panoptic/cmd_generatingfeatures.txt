@@ -1,0 +1,54 @@
+conda create -n p-deeplab --clone mask2former
+conda activate p-deeplab
+cd /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab
+
+python ./tools_d2/demo.py --config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab/tools_d2/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Dataset/Backup_Datasets/original_val_1024/frankfurt/frankfurt_000000_000294_leftImg8bit.png 
+
+MODEL.WEIGHTS /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/Codes/deeplab_panoptic/panoptic-deeplab/model/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.pth
+
+
+python tools_d2\demo.py --config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab/tools_d2/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml
+
+python ./tools_d2/demo.py --config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab/tools_d2/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/feature_sample_imgs/ori.png
+
+Feature:
+/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/anaconda3/envs/p-deeplab/lib/python3.10/site-packages/detectron2/projects/panoptic_deeplab/panoptic_seg.py
+
+python ./tools_d2/demo.py --config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab/tools_d2/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/feature_sample_imgs/small.png
+
+
+python ./tools_d2/demo.py --config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab/tools_d2/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/feature_sample_imgs/medium.png
+
+
+
+python ./tools_d2/demo.py --config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab/tools_d2/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/feature_sample_imgs/large.png
+
+python ./tools_d2/demo.py --config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab/tools_d2/configs/Cityscapes-PanopticSegmentation/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/lindau_000000_000019_extreme.png
+
+2025.5.15 TASE
+eval:
+cd /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab-modified_a_lot
+
+python ./tools_d2/train_panoptic_deeplab.py \
+--config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab-modified_a_lot/configs/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml \
+--eval-only MODEL.WEIGHTS /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab-modified_a_lot/model/panoptic_deeplab_X_65_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.pth
+
+python ./tools_d2/train_panoptic_deeplab.py \
+--config-file  /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab-modified_a_lot/configs/panoptic_deeplab_H_48_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml \
+--eval-only MODEL.WEIGHTS /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab-modified_a_lot/model/panoptic_deeplab_H_48_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.pth
+
+python ./tools_d2/train_panoptic_deeplab.py \
+--config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab-modified_a_lot/configs/panoptic_deeplab_R_52_os16_mg124_poly_90k_bs32_crop_512_1024_dsconv.yaml \
+--eval-only MODEL.WEIGHTS /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/deeplab_panoptic/panoptic-deeplab-modified_a_lot/model/res52.pkl
+
+
+以下detectron文件有另一个疑似给acdc或者别的数据集的版本：
+/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/anaconda3/envs/p-deeplab/lib/python3.10/site-packages/detectron2/data/datasets/cityscapes_panoptic.py
+
+该文件相比原版改了一句：image_file.replace("leftImg8bit", "gtFine").split("e.")[0] + "e_labelTrainIds.png"
+
+conda activate oneformer不要用p-deeplab
+最后用了oneformer的环境跑的（deeplab环境中改了一些feature的地方，忘记改在哪里了），改了oneformer环境中的：
+/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/anaconda3/envs/oneformer/lib/python3.10/site-packages/detectron2/data/datasets/cityscapes_panoptic.py
+
+每次eval还需要指定数据集位置export DETECTRON2_DATASETS=/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/Oneformer_for_ACDC_eval/OneFormer/datasets 
