@@ -45,6 +45,13 @@ python Motion_blur.py
 python Raindrop/Raindrops.py
 python ...
 ```
+## Seg_Tools
+#### Generating error maps and feature maps
+- ./Seg_Tools/error_feature_map.txt for details on how to generate the error and feature maps in the paper!
+```
+cd ./Dataset/Seg_Tools
+```
+
 
 ## More coming soon upon!
 
