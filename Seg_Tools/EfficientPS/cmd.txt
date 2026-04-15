@@ -1,0 +1,97 @@
+CycleGAN(conda activate pytorch-CycleGAN-and-pix2pix)
+
+cd EfficientPS
+conda init bash
+
+conda activate efficientPS_env
+
+conda env list
+
+
+
+
+put gtfine and leftImg8bit into one folder for converter
+
+
+python tools/convert_cityscapes.py ROOT_DIRECTORY_OF_CITYSCAPES ./data/cityscapes/
+
+python tools/convert_cityscapes.py ~/Downloads/cityscapes_dataset ./data/cityscapes/
+
+cd ..
+git clone https://github.com/mcordts/cityscapesScripts.git
+cd cityscapesScripts/cityscapesscripts/preparation
+
+python createPanopticImgs.py --dataset-folder path_to_cityscapes_gtFine_folder --output-folder ../../../EfficientPS/data/cityscapes --set-names val
+
+python createPanopticImgs.py --dataset-folder ~/Downloads/cityscapes_dataset/gtFine --output-folder ~/EfficientPS/data/cityscapes --set-names val
+
+
+put /EfficientPS/configs/efficientPS_singlegpu_sample.py to /EfficientPS
+
+python tools/test2.py efficientPS_singlegpu_sample.py ~/Downloads/efficientPS_cityscapes/model/model.pth --eval panoptic
+
+# put efficientPS_singlegpu_sample.py out from configs
+
+# Input the data file into the main directionary
+
+------------------------------------------------
+# search for reason of the requirement error
+
+conda install pycocotools
+
+pip install pycocotools ? (Not working)
+
+conda install -c conda-forge pycocotools (working)
+pip install --upgrade numpy
+pip install Cython
+
+pip install git+https://github.com/philferriere/cocoapi.git#egg=pycocotools^&subdirectory=PythonAPI
+
+ python tools/convert_cityscapes.py ROOT_DIRECTORY_OF_CITYSCAPES ./data/cityscapes/
+ 
+pip install git+git://github.com/waspinator/pycococreator.git@0.2.0
+
+git config --global http.sslVerify"False"
+
+python tools/convert_cityscapes.py ~/Downloads/cityscapes/gtFine_trainvaltest ./data/cityscapes/
+
+-----------------------
+
+python tools/convert_kitti.py /home/jocelyn/kitti_panoptic ./data/kitti/
+
+python tools/test2.py efficientPS_kitti.py efficientPS_singlegpu_sample.py ~/Downloads/model.pth --eval panoptic
+
+python tools/test2.py efficientPS_kitti.py efficientPS_singlegpu_sample.py ~/Desktop/EfficientPS/checkpoints/efficientPS_cityscapes/model_day/model.pth --out output
+
+
+python tools/test.py efficientPS_singlegpu_sample.py /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS/checkpoints/cityscape_model.pth --eval panoptic
+
+
+PQ calculation
+/home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS/mmdet/datasets/cityscapes.py
+/home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/cityscapesScripts/cityscapesscripts/evaluation/evalPanopticSemanticLabeling.py
+/home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/anaconda3/envs/efficientPS_env/lib/python3.7/site-packages/cityscapesscripts/evaluation/evalPanopticSemanticLabeling.py
+
+python tools/test.py efficientPS_singlegpu_sample.py /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS/checkpoints/cityscape_model.pth --eval panoptic
+python tools/test.py efficientPS_singlegpu_sample.py /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS/checkpoints/efficientPS_cityscapes/model_day/model.pth --eval panoptic
+
+python tools/test.py efficientPS_singlegpu_sample.py /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS2/checkpoints/efficientPS_cityscapes/model/model.pth --eval panoptic
+
+python tools/cityscapes_demo.py configs/efficientPS_multigpu_sample.py /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS/checkpoints/cityscape_model.pth /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS/data_panoptic_example_2 ./output/panoptic_example2
+
+python tools/cityscapes_demo.py configs/efficientPS_multigpu_sample.py /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS/checkpoints/efficientPS_cityscapes/model_day/model.pth /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS/data_panoptic_example_2 ./output/panoptic_example22
+
+Command for TITS paper:
+python tools/test.py efficientPS_singlegpu_sample.py /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS2/checkpoints/efficientPS_cityscapes/model/model.pth --eval panoptic
+
+sys.path.append('/home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS1/efficientNet/')
+conda activate efficientPS_env_demo
+python tools/cityscapes_demo.py configs/efficientPS_multigpu_sample.py /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS2/checkpoints/efficientPS_cityscapes/model/model.pth /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS1/data_panoptic_example_2 /home/wang3_y@WMGDS.WMG.WARWICK.AC.UK/Desktop/EfficientPS1/output/panoptic_example2
+(会报错但是能在路径下生成结果)
+
+
+2025.5.15
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
+conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.2 -c pytorch
+
+python tools/test.py efficientPS_singlegpu_sample.py /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/EfficientPS1/checkpoints/efficientPS_cityscapes/model_day/model.pth --eval panoptic
