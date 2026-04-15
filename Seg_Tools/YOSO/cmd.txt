@@ -1,0 +1,42 @@
+python demo/demo.py \
+  --config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/YOSO/projects/YOSO/configs/cityscapes/panoptic-segmentation/YOSO-R50.yaml \
+  --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/YOSO/demo/fig.png \
+  --output output.png --opts MODEL.WEIGHTS /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/YOSO/checkpoints/yoso_res50_cityscapes.pth
+
+
+cuda 11.6 不行，但 11.8 可以
+
+
+python -m pip install detectron2==0.6 -f \
+  https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
+
+pip install timm
+pip3 install mxnet-mkl==1.6.0 numpy==1.23.1
+
+是否需要这些存疑：
+pip install \
+  cloudpickle \
+  future \
+  "fvcore>=0.1.1" \
+  mock \
+  pydot \
+  scipy \
+  tabulate \
+  tensorboard \
+  termcolor>=1.1 \
+  yacs>=0.1.6
+
+eval:
+python projects/YOSO/train_net.py --num-gpus 1 \
+--config-file /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/YOSO/projects/YOSO/configs/cityscapes/panoptic-segmentation/YOSO-R50.yaml \
+--eval-only MODEL.WEIGHTS /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/YOSO/checkpoints/yoso_res50_cityscapes.pth
+
+conda activate YOSO
+
+代码中修改了的部分：
+You can set the location for builtin datasets by 
+export DETECTRON2_DATASETS=/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/Oneformer_for_ACDC_eval/OneFormer/datasets 
+If left unset, the default is ./datasets relative to your current working directory.
+
+set了cityscape的path之后要把/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/anaconda3/envs/YOSO/lib/python3.8/site-packages/detectron2/data/datasets/cityscapes_panoptic.py
+中的94行左右改为image_file.replace("leftImg8bit", "gtFine").split("e.")[0] + "e_labelTrainIds.png"
