@@ -1,0 +1,42 @@
+error map:
+/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/error_map/generate_semantic_id_gt.py
+输入图片为gtFine_labelIds.png
+生成semantic_id_gt.csv
+
+/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/oneformer/oneformer_model.py
+通过跑一遍demo生成pre_class_map.csv：
+python demo/demo.py --config-file configs/cityscapes/oneformer_R50_bs16_90k.yaml\
+  --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/datasets/cityscapes_ori/leftImg8bit/val/frankfurt/frankfurt_000000_000576_leftImg8bit.png \
+  --output output/demo_output \
+  --task panoptic \
+  --opts MODEL.IS_TRAIN False MODEL.IS_DEMO True MODEL.WEIGHTS checkpoints/250_16_convnext_l_oneformer_cityscapes_90k.pth
+
+
+/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/generate_error_map.py
+python generate_error_map.py
+生成error map
+
+feature map：
+用这个oneformer：
+/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/OneFormer_for_index
+在这里代码：
+/home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/OneFormer_for_index/oneformer/modeling/meta_arch/oneformer_head.py
+
+通过这个命令保存到 Backup/OneFormer_for_index/multi_scale_feature 之中
+python demo/demo.py --config-file configs/cityscapes/convnext/oneformer_convnext_large_bs16_90k.yaml\
+  --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Backup/OneFormer_for_index/MUSE/MUSE_oneformer/REC0021_frame_241360_radar.png \
+  --output output/demo_output \
+  --task panoptic \
+  --opts MODEL.IS_TRAIN False MODEL.IS_DEMO True MODEL.WEIGHTS checkpoints/250_16_convnext_l_oneformer_cityscapes_90k.pth
+
+python demo/demo.py --config-file configs/cityscapes/convnext/oneformer_convnext_xlarge_bs16_90k.yaml\
+  --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/datasets/cityscapes_ori/leftImg8bit/val/frankfurt/frankfurt_000000_000576_leftImg8bit.png \
+  --output output/demo_output \
+  --task panoptic \
+  --opts MODEL.IS_TRAIN False MODEL.IS_DEMO True MODEL.WEIGHTS checkpoints/250_16_convnext_l_oneformer_cityscapes_90k.pth
+
+python demo/demo.py --config-file configs/cityscapes/oneformer_R50_bs16_90k.yaml\
+  --input /home/wang3_y_WMGDS.WMG.WARWICK.AC.UK/Code/OneFormer_for_ACDC_eval_error_map_and_feature/datasets/cityscapes_ori/leftImg8bit/val/frankfurt/frankfurt_000000_000576_leftImg8bit.png \
+  --output output/demo_output \
+  --task panoptic \
+  --opts MODEL.IS_TRAIN False MODEL.IS_DEMO True MODEL.WEIGHTS checkpoints/250_16_convnext_l_oneformer_cityscapes_90k.pth
