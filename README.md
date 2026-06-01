@@ -1,4 +1,4 @@
-# Robustness-of-Panoptic-Segmentation-for-Degraded-Automotive-Cameras-Data (T-ASE 2025, to be presented in ICRA2026!)
+# Robustness-of-Panoptic-Segmentation-for-Degraded-Automotive-Cameras-Data (T-ASE 2025, ICRA2026)
 
 This is the **PyTorch re-implementation** of our T-ASE accepted paper: 
 Robustness-of-Panoptic-Segmentation-for-Degraded-Automotive-Cameras-Data, [link](https://drive.google.com/file/d/1tu9D4qzwBZrjX63JRrqgI5hpND569SWd/view). 
