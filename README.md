@@ -1,7 +1,7 @@
 # Robustness-of-Panoptic-Segmentation-for-Degraded-Automotive-Cameras-Data (T-ASE 2025, ICRA2026)
 
 This is the **PyTorch re-implementation** of our T-ASE accepted paper: 
-Robustness-of-Panoptic-Segmentation-for-Degraded-Automotive-Cameras-Data, [link](https://drive.google.com/file/d/1tu9D4qzwBZrjX63JRrqgI5hpND569SWd/view). 
+Robustness-of-Panoptic-Segmentation-for-Degraded-Automotive-Cameras-Data, [link](https://ieeexplore.ieee.org/abstract/document/11148081). 
 
 While panoptic quality might be affected by automotive camera data quality, a comprehensive understanding and modelling of their relationship remains underexplored. Motivated by such a need, this work proposes a unifying pipeline to evaluate the robustness of panoptic segmentation models for automotive cameras, correlating it with 8 traditional image quality metrics (IQA).
 
